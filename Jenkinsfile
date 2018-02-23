@@ -5,7 +5,6 @@ def utils = new io.fabric8.Utils()
 def stashName = "buildpod.${env.JOB_NAME}.${env.BUILD_NUMBER}".replace('-', '_').replace('/', '_')
 def envStage = utils.environmentNamespace('stage')
 def envProd = utils.environmentNamespace('run')
-
 mavenNode {
   checkout scm
   if (utils.isCI()){
